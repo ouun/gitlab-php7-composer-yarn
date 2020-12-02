@@ -1,4 +1,4 @@
-FROM php:7.1.8
+FROM php:7.4.13
 
 ENV PHANTOM_JS "phantomjs-2.1.1-linux-x86_64"
 
