@@ -9,8 +9,7 @@ RUN apt-get update && apt-get install -y \
         ca-certificates \
         git \
         build-essential \
-        zip \ 
-        unzip
+        zip unzip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
