@@ -6,11 +6,11 @@ RUN apt-get update && apt-get install -y \
         wget \
         apt-transport-https \
         lsb-release \
-        ca-certificates
+        ca-certificates \
         git \
         build-essential \
-        zip unzip \
-        zlib1g-dev
+        zip \ 
+        unzip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
