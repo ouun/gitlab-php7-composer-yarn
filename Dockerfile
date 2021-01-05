@@ -1,15 +1,7 @@
 FROM php:7.4-fpm
 
-# Updates & Adds Packages
-RUN apt-get update && apt-get install -y \
-        curl \
-        wget \
-        apt-transport-https \
-        lsb-release \
-        ca-certificates \
-        git \
-        build-essential \
-        zip unzip
+# Updates
+RUN apt-get update && apt-get install -y git zip curl wget apt-transport-https lsb-release ca-certificates
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
@@ -18,4 +10,4 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && bash nodesource_setup.sh && apt-get -y --force-yes install nodejs
 
 # Install Yarn
-RUN npm install --global yarn
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
