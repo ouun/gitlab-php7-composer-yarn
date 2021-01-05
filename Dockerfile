@@ -1,7 +1,7 @@
 FROM php:7.4-fpm
 
 # Updates
-RUN apt-get update && apt-get install -y curl wget apt-transport-https lsb-release ca-certificates zip unzip php-zip
+RUN apt-get update && apt-get install -y curl wget apt-transport-https lsb-release ca-certificates
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
